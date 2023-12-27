@@ -1,9 +1,4 @@
-Certainly! Here's the complete README.md content in markdown:
-
-```markdown
 # Salesforce Analytic Data Uploader
-
-The Salesforce Analytic Data Uploader is a Python package designed to simplify the process of uploading analytical data to Salesforce. It provides a set of tools for interacting with the Salesforce SOAP API, making it easier for developers to integrate data uploads into their Salesforce workflows.
 
 ## 📚 Table of Contents
 
@@ -22,81 +17,51 @@ Get started with the `sf_analytic_data_uploader` package in a breeze using pip:
 pip install sf_analytic_data_uploader
 ```
 
-### Supported Python Versions
-
-The package is compatible with Python 3.6 and above.
-
 ## 💡 Usage
 
 ### Authentication
-To use the package, you need to authenticate with your Salesforce instance. Follow these steps:
-
-1. Provide your Salesforce username, password, and security token to the package.
-2. Initiate the authentication process using the `Login` class.
-
-Example:
-
-```python
-from sf_analytic_data_uploader import Login
-
-username = "your_salesforce_username"
-password = "your_salesforce_password"
-security_token = "your_security_token"
-
-# Initialize the Login class
-login_instance = Login(username, password, security_token)
-
-# Retrieve session ID and server URL
-session_id = login_instance.get_session_id()
-server_url = login_instance.get_server_url()
-```
+To use the package, you need to authenticate with your Salesforce instance. Follow the instructions in the documentation to provide your Salesforce username, password, and security token.
 
 ### Uploading Data
-Learn how to upload both data and metadata to Salesforce using the package. Follow these steps:
+Learn how to upload both data and metadata to Salesforce using the package. Understand the process of interacting with Salesforce objects and how to structure your data for efficient uploads.
 
-1. Create an instance of the `UploadToSfOrg` class.
-2. Use the provided methods to upload data and metadata.
+### Working with Metadata
+Discover methods for managing metadata related to your Salesforce objects. This includes handling CSV and JSON files associated with your data.
 
-Example:
+## ✨ Features
 
-```python
-from sf_analytic_data_uploader import UploadToSfOrg
+### Data Upload
+Explore features related to uploading data, including support for CSV and JSON files. Understand how the package streamlines the process of data integration with Salesforce.
 
-# Provide Salesforce credentials
-username = "your_salesforce_username"
-password = "your_salesforce_password"
-security_token = "your_security_token"
+### Metadata Management
+Learn about features designed for efficient metadata management. This includes handling metadata associated with your Salesforce objects and ensuring data consistency.
 
-# Initialize the UploadToSfOrg class
-uploader = UploadToSfOrg(username, password, security_token)
-
-# Perform data upload operations
-uploader.write_to_crma_app(
-    crma_app_alias="your_crma_app_alias",
-    dataset_alias="your_dataset_alias",
-    local_dataset_path="path/to/local/dataset.csv",
-    local_dataset_metadata_path="path/to/local/metadata.json",
-    data_operation_type="upload_type"
-)
-```
-
-## 🌟 Features
-
-- **Authentication**: Easily authenticate with your Salesforce instance using the provided `Login` class.
-- **Data Upload**: Use the `UploadToSfOrg` class to upload both data and metadata to Salesforce.
-- **SOAP API Integration**: Interact with the Salesforce SOAP API for seamless data communication.
+### SOAP API Integration
+Understand how the package seamlessly integrates with Salesforce's SOAP API, providing a robust and reliable connection for data transfer.
 
 ## ⚙️ Configuration
 
-Configure the package with your Salesforce credentials and customize data upload operations. Refer to the [Usage](#usage) section for detailed examples.
+### Configuration File
+Discover details on creating a configuration file to customize the behavior of the `sf_analytic_data_uploader` package. This allows you to tailor the package to your specific Salesforce environment.
+
+### Environment Variables
+Learn how to use environment variables to configure the package. This provides flexibility in managing settings without modifying the source code.
 
 ## 🤝 Contributing
 
-If you find any issues or have suggestions for improvement, feel free to open an [issue](https://github.com/your_username/sf_analytic_data_uploader/issues) or submit a [pull request](https://github.com/your_username/sf_analytic_data_uploader/pulls). Contributions are welcome!
+### Bug Reports
+If you encounter any issues or bugs, please follow the guidelines for reporting bugs. This helps the community address and resolve issues promptly.
+
+### Feature Requests
+Suggest new features for the package by following the provided guidelines. Your input is valuable for enhancing the functionality of the `sf_analytic_data_uploader` package.
+
+### Pull Requests
+Contribute to the development of the package by submitting pull requests. Follow the outlined process to propose changes and improvements.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### MIT License
+Review information about the open-source MIT License, which governs the use and distribution of the `sf_analytic_data_uploader` package. Understand your rights and responsibilities under this license.
 ```
 
-Please replace placeholders such as `your_salesforce_username`, `your_salesforce_password`, `your_security_token`, `path/to/local/dataset.csv`, `path/to/local/metadata.json`, `your_crma_app_alias`, `your_dataset_alias`, and others with your actual values and paths.
+Feel free to further customize the content to match your specific package details and preferences.
