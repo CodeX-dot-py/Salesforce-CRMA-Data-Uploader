@@ -30,12 +30,17 @@ def login(username: str, password: str, security_token: str) -> tuple:
 
     try:
         response = requests.post(url=soap_login_url, data=soap_login_request, headers=soap_login_header)
-        response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+        response.raise_for_status()  # Raises an HTTPError for unsuccessful status codes
     except requests.exceptions.RequestException as e:
         print(f'Error during login request: {e}')
         return None, None
 
-    xml_root = ET.fromstring(response.content)
-    session_id = xml_root.find('.//{urn:partner.soap.sforce.com}sessionId').text
-    server_url = xml_root.find('.//{urn:partner.soap.sforce.com}serverUrl').text
+    try:
+        xml_root = ET.fromstring(response.content)
+        session_id = xml_root.find('.//{urn:partner.soap.sforce.com}sessionId').text
+        server_url = xml_root.find('.//{urn:partner.soap.sforce.com}serverUrl').text
+    except (AttributeError, ET.ParseError):
+        print('Error parsing Salesforce response XML.')
+        return None, None
+
     return session_id, server_url
